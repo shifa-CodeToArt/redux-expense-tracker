@@ -1,24 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import AppRouter from "./Router/AppRouter";
+import configureStore from "./Store/configureStore";
+import { Provider } from "react-redux";
+import { addExpense } from "./Actions/Expenses";
+import { setTextFilter } from "./Actions/Filters";
+// import getVisibleExpenses from "./Selectors/Expenses";
 
 function App() {
+  const store = configureStore;
+  // store.dispatch(addExpense({ description: "Gas Bill" ,amount:1000,CreatedAt:"1618986600000"}));
+  // store.dispatch(addExpense({ description: "Water Bill",amount:8000,CreatedAt:"1618122600000"}));
+  //  store.dispatch(addExpense({ description: "Rent",amount:5000,CreatedAt:"1617258600000"}));
+  // store.dispatch(setTextFilter(""));
+
+// setTimeout(()=>{
+//   store.dispatch(setTextFilter("Bill"));
+// },3000)
+
+  // const state = store.getState();
+  // const VisibleExpenses = getVisibleExpenses(state.expenses, state.filters);
+
+  // console.log(VisibleExpenses);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Provider store={store}>
+        <AppRouter />
+      </Provider>
+    </>
   );
 }
 
