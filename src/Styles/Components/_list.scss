@@ -1,0 +1,74 @@
+.list_header {
+    text-transform: capitalize;
+    background-color: $white;
+    border: 1px solid darken($white, 7%);
+    color: $grey;
+    display: flex;
+    justify-content: space-between;
+    padding: $small-size $medium-size;
+}
+
+.list_item {
+    text-transform: capitalize;
+    border:1px solid darken($white, 7%);
+    border-top: none;
+    color: $grey;
+    display: flex;
+    flex-direction: column;
+    padding: $small-size;
+    text-decoration: none;
+    transition: background .3s ease-out;
+    &:hover{
+        background-color: $white;
+    }
+
+    @media (min-width : $desktopbreakpoint) {
+        text-transform: capitalize;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+.list_item__title{
+margin: 0;
+word-break: break-all;
+
+}
+
+.list_item__message{
+    text-transform: capitalize;
+    border:1px solid darken($white, 7%);
+    border-top: none;
+    color: $grey;
+    display: flex;
+    flex-direction: column;
+    padding: $small-size;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.list_item__subtitle{
+color: $grey;
+font-size: $small-size;
+}
+
+.list_item__data{
+    font-size: $small-size;
+    margin: $small-size 0 0 0 ;
+
+    @media (min-width:$desktopbreakpoint) {
+        margin: 0;
+        padding-left: $small-size;
+    }
+}
+
+
+.list_body{
+
+    margin-bottom: $medium-size;
+    
+    @media (min-width:$desktopbreakpoint) {
+        margin-bottom: $large-size;
+    }
+}

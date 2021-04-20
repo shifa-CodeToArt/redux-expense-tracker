@@ -63,16 +63,18 @@ const ExpenseForm = (props) => {
 
   };
   return (
-    <div>
-      <form onSubmit={Onsubmit}>
+      <form className="form" onSubmit={Onsubmit}>
+      {error && <p className="form__error">{error}</p>}
         <input
           type="input"
           placeholder="Description"
           autoFocus
+          className="text_input"
           value={description}
           onChange={onDescriptionChange}
         />
         <input
+        className="text_input"
           type="text"
           placeholder="Amount"
           value={amount}
@@ -80,6 +82,7 @@ const ExpenseForm = (props) => {
         />
 
         <SingleDatePicker
+      
           date={createdAt} // momentPropTypes.momentObj or null
           onDateChange={onDateChange} // PropTypes.func.isRequired
           focused={calenderFocused} // PropTypes.bool
@@ -89,14 +92,18 @@ const ExpenseForm = (props) => {
         />
 
         <textarea
+        className="text_area"
           placeholder="Add a note (Optional)"
           value={note}
           onChange={onNoteChnage}
         />
-        <button type="submit">Add Expense</button>
-        <p>{error}</p>
+        <div>
+        <button className="button" type="submit">Add Expense</button>
+        </div>
+       
+        
       </form>
-    </div>
+
   );
 };
 

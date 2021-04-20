@@ -1,0 +1,22 @@
+.header_background{
+    background-color: $dark_blue;
+   
+}
+
+
+.header_title{
+    color: whitesmoke;
+    text-decoration: none;
+    h1{
+        margin: 0;
+    }
+}
+
+.header__content{
+
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: $small-size;
+
+}

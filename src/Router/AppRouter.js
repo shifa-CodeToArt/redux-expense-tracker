@@ -1,24 +1,32 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
+import { Router,Route, Switch } from "react-router-dom";
+import createHistory from 'history/createBrowserHistory'
 import Dashboard from "../Components/Dashboard";
 import AddExpense from "../Components/AddExpense";
 import Error404 from "../Components/Error404";
 import EditExpense from "../Components/EditExpense";
-import Help from "../Components/Help";
 import Navbar from "../Components/Navbar";
+import LoginPage from '../Components/LoginPage';
+import PrivateRoute from "./PrivateRoute";
+import PublicRoute from "./PublicRoute";
+ export const history = createHistory()
 
 const AppRouter = () => {
   return (
+  
+    <Router history={history}>
     <div>
-    <Navbar/>
       <Switch>
-      <Route exact path="/" component={Dashboard} />
-      <Route exact path="/add" component={AddExpense} />
-      <Route exact path="/edit/:id" component={EditExpense} />
-      <Route exact path="/help" component={Help} />
+      <PublicRoute exact path="/" component={LoginPage} />
+      <PrivateRoute exact path="/dashboard" component={Dashboard} />
+      <PrivateRoute exact path="/add" component={AddExpense} />
+      <PrivateRoute exact path="/edit/:id" component={EditExpense} />
       <Route  component={Error404} />
       </Switch>
     </div>
+    </Router>
+
+   
   );
 };
 

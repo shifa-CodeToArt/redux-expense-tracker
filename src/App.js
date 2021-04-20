@@ -1,15 +1,14 @@
+import React from "react";
+import ReactDOM from "react-dom";
 import "./App.css";
-import AppRouter from "./Router/AppRouter";
+import AppRouter,{history} from "./Router/AppRouter";
 import configureStore from "./Store/configureStore";
 import { Provider } from "react-redux";
-import { addExpense } from "./Actions/Expenses";
 import { setTextFilter } from "./Actions/Filters";
-// import getVisibleExpenses from "./Selectors/Expenses";
-
+import {firebase} from"./Firebase/firebase";
+import "./Styles/mysass.scss";
 function App() {
   const store = configureStore;
-
-
   return (
     <>
       <Provider store={store}>
@@ -19,4 +18,6 @@ function App() {
   );
 }
 
+
 export default App;
+

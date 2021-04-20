@@ -1,0 +1,33 @@
+.text_input {
+
+    border: 1px solid #cacccd;
+    height: 50px;
+    font-size: $small-size;
+    font-weight: 300;
+    margin: $small-size;
+}
+
+.select {
+    @extend .text_input;
+    padding: 0.2rem;
+}
+
+// .DateRangePickerInput__showClearDates {
+//     padding-top: -0.5rem;
+//     margin-top: 1.2rem;
+// }
+
+.DateRangePicker {
+    position: relative;
+    display: inline-block;
+    margin-left: 20px;
+}
+.DateRangePickerInput__showClearDates {
+    padding-right: 30px;
+    margin-top: 20px;
+}
+.text_area{
+    @extend .text_input;
+    height: 10rem;
+    
+}

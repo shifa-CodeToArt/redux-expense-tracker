@@ -4,6 +4,7 @@ import "react-dates/initialize";
 import { SingleDatePicker } from "react-dates";
 import "react-dates/lib/css/_datepicker.css";
 
+
 const ExpenseForm = (props) => {
   const [description, setDescription] = useState(props.expense.description);
   const [note, setNote] = useState(props.expense.note);
@@ -11,6 +12,9 @@ const ExpenseForm = (props) => {
   const [createdAt, setcreatedAt] = useState(moment(props.expense.createdAt));
   const [calenderFocused, setcalenderFocused] = useState(false);
   const [error, seterror] = useState("");
+
+
+  
 
   const onDescriptionChange = (e) => {
     const Description = e.target.value;
@@ -51,9 +55,10 @@ const ExpenseForm = (props) => {
   }
  
   return (
-    <div>
-      <form onSubmit={onsubmit}>
+
+      <form class="form" onSubmit={onsubmit}>
         <input
+        className="text_input"
           type="input"
           placeholder="Description"
           autoFocus
@@ -61,6 +66,7 @@ const ExpenseForm = (props) => {
           onChange={onDescriptionChange}
         />
         <input
+        className="text_input"
           type="text"
           placeholder="Amount"
           value={amount}
@@ -77,14 +83,17 @@ const ExpenseForm = (props) => {
         />
 
         <textarea
+        className="text_area"
           placeholder="Add a note (Optional)"
           value={note}
           onChange={onNoteChnage}
         />
-        <button type="submit">Save Changes</button>
-        <p>{error}</p>
+        <div>
+        <button className="button" type="submit">Save Changes</button>
+      
+        </div>
       </form>
-    </div>
+    
   );
 };
 

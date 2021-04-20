@@ -1,0 +1,32 @@
+.box_layout{
+align-items: center;
+background-image: url("../../images/bg.jpg");
+background-size: cover;
+display: flex;
+height: 100vh;
+justify-content: center;
+width: 100vw;
+}
+
+.box_layout__box{
+    background: fade-out($color:white, $amount: .15);
+    border-radius: 3px;
+    text-align: center;
+    width: 25rem;
+    padding: $large-size $medium-size;
+}
+
+.box_layout__box_title{
+   margin: 0 0 $medium-size; 
+   line-height: 1;
+}
+
+.login_button{
+    background-color: $blue;
+    border: none;
+    color: whitesmoke;
+    font-weight: 300;
+    padding: 1rem;
+    font-size: 1.2rem;
+    margin: 1rem;
+}

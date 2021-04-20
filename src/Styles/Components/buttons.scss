@@ -1,0 +1,36 @@
+.button {
+    background: $blue;
+    border: none;
+    color: white;
+    display: inline-block;
+    font-size: $button_font_size;
+    font-weight: 300;
+    line-height: 1;
+    padding:1rem;
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 2px;
+    margin-left: 0.6rem;
+  }
+  
+  .button--link {
+    background: none;
+  }
+  
+  .button--secondary {
+    @extend .button; 
+    background: #888;
+  }
+  
+.button-add{
+  @extend .button;
+  margin-bottom: 1rem;
+}
+
+
+.button_logout{
+  @extend .button;
+  background-color: $dark_blue;
+  font-size: 1rem;
+  margin-right: 0rem !important;
+}

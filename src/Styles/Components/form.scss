@@ -1,0 +1,17 @@
+.form{
+display: flex;
+flex-direction: column;
+>*{
+    margin-bottom: $medium-size;
+}
+}
+
+.form__error{
+margin:  0 0 $medium-size 0;
+font-style: italic;
+}
+
+
+.SingleDatePicker {
+    margin-left: 1.2rem;
+}
